@@ -29,7 +29,23 @@ Fazit: LinkedIns öffentliche Suche liefert für generische Wohlfühl-Phrasen ("
 
 ---
 
-## Learning — $0-Marketing-Playbook (r/micro_saas, aufgenommen 2026-07-05)
+## Learning 1 — SEO/AEO-Playbook „Agensi" (r/micro_saas, aufgenommen 2026-07-05)
+
+Quelle: „Non-technical solo founder. 40K MAU, 500-700 daily organic clicks, $0 on ads. Here's exactly how I did it." — r/micro_saas (Share-Link: https://www.reddit.com/r/micro_saas/s/dZPY6kStyN). Solo-Gründer aus Amsterdam, AI-Skill-Marktplatz agensi.io: 40K+ MAU, DR 50, 260+ Artikel in 4 Monaten, 850+ monatliche Sessions aus KI-Suchmaschinen, 200-K€-Runde — alles organisch, 0 € Ads.
+
+**Kern-Mechaniken, direkt auf SSIG übertragbar:**
+
+1. **Wöchentlicher Gap-Analyse-Loop (der wichtigste Punkt).** Jeden Montag Search-Console-Daten exportieren und per KI auswerten: Keyword-Gaps (Impressionen ohne eigene Seite), Kannibalisierung (zwei Seiten konkurrieren um dieselbe Query), neue aufkommende Queries. Daraus 3–5 Artikel pro Woche, einreichen, fertig. Der Loop compoundet: jeder rankende Artikel erzeugt neue Impressionen für verwandte Queries, die die nächste Gap-Analyse füttern. → **Bei uns ab sofort möglich:** Alle 5 SSIG-Properties sind seit 2026-07-05 in der Search Console verifiziert; sobald Daten auflaufen (2–3 Tage), kann dieser Loop wöchentlich über die bestehende Composio-GSC-Anbindung laufen.
+2. **Zwei Seitentypen im Marktplatz-/Produkt-SEO:** Produktseiten ranken für spezifische Long-Tails, Content-Seiten für informationale Queries und funneln auf die Produktseiten. Interne Verlinkung als Netz (Artikel → Kategorie → Produkt → verwandte Artikel), keine verwaisten Seiten.
+3. **Das Artikel-Format, das rankt UND von KI zitiert wird:** Kontext-Absatz (echte Info, kein Fluff) → „Quick Answer"-Blockquote oben (40–60 Wörter, beantwortet die Hauptfrage direkt) → fragenbasierte H2-Überschriften → interne Links auf Produktseiten → 6+ FAQ-Fragen mit FAQ-Structured-Data am Ende.
+4. **AEO (AI Engine Optimization) — fast konkurrenzlos.** 850+ Sessions/Monat aus ChatGPT (358), Claude (250), Perplexity (117), Gemini (101) — schneller wachsend als Google-Traffic, vor 3 Monaten noch null. Dieselbe Struktur (Quick Answer + FAQ-Schema + Frage-H2s) wird von KI-Engines als Zitat gezogen. → teamsdashboard.com hat bereits eine KI-Crawler-optimierte robots.txt (GPTBot, ClaudeBot, PerplexityBot explizit erlaubt) — auf galynski.com und secretexpiry.com übertragen und das Content-Format entsprechend bauen.
+5. **Technische SEO-Fallen, die ihn fast zweimal ruiniert haben:** (a) Google-Core-Update: Position 7 → 25 über Nacht ⇒ Traffic-Quellen diversifizieren, nie 100 % Google. (b) Prerender lieferte leeres HTML an Bingbot + doppelter Canonical-Bug ⇒ Bing-Traffic −90 %, wochenlang unbemerkt. Sein Check: `curl -A "bingbot/2.0" <url> | grep "<h1"`. → **Am 2026-07-05 auf allen 4 SSIG-Sites ausgeführt: alle liefern echtes HTML mit H1 an Bots ✓.** Aber dabei bestätigt: www.secretexpiry.com deklariert `canonical=https://secretexpiry.com` (non-www), während non-www per Redirect auf www zeigt — widersprüchliches Canonical, fixen. galynski.com und teamsdashboard.com haben gar kein Canonical-Tag (ergänzen).
+6. **Bing Webmaster Tools ab Tag 1** — sein größtes Versäumnis. → Für alle SSIG-Domains einrichten (GSC-Import möglich, 10 Minuten).
+7. **Nicht-Entwickler-Content früher schreiben:** Seine eigentlichen Käufer waren Business-Owner/Agenturen, nicht Devs — der Wechsel öffnete 10× größere Keyword-Räume. → Für SSIG: Nicht nur IT-Admin-Content, sondern auch Geschäftsführer-/Office-Manager-Perspektive („Warum zeigt mein Handy unbekannte Nummern bei Kollegen-Anrufen?").
+
+---
+
+## Learning 2 — Directory-Playbook „AntForms" (r/micro_saas, aufgenommen 2026-07-05)
 
 Quelle: „Solo founder, full-time job: built AntForms to 50K monthly visitors in 4 months on $0 marketing. Full playbook." — r/micro_saas, u/HandleOk2760, 2026-05-09 (197 Punkte, 89 Kommentare). https://www.reddit.com/r/micro_saas/comments/1t86l39/
 
