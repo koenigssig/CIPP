@@ -29,6 +29,23 @@ Fazit: LinkedIns öffentliche Suche liefert für generische Wohlfühl-Phrasen ("
 
 ---
 
+## Learning — $0-Marketing-Playbook (r/micro_saas, aufgenommen 2026-07-05)
+
+Quelle: „Solo founder, full-time job: built AntForms to 50K monthly visitors in 4 months on $0 marketing. Full playbook." — r/micro_saas, u/HandleOk2760, 2026-05-09 (197 Punkte, 89 Kommentare). https://www.reddit.com/r/micro_saas/comments/1t86l39/
+
+Kernaussagen des Posts (Form-Builder-SaaS, 4 Monate, 0 € Marketingbudget, DR 0 → 33 in 30 Tagen, Akquise-Angebot in Monat 3):
+
+1. **Bewusst in einen umkämpften Markt gehen.** Umkämpft = bewiesene Nachfrage; niemand muss vom Grundbedarf überzeugt werden, nur davon, dass die eigene Lösung den spezifischen Workflow besser trifft. 1-Sterne-Reviews der Konkurrenz auf G2 als Produkt-Roadmap lesen. → Direkt übertragbar auf GALYNSKI (GAL-Sync-Markt mit CiraSync/Cloudiway/Sigsync ist umkämpft = validiert; Differenzierung: DE-Hosting, ohne MDM, planbares Pricing).
+2. **Directory-Blitz in Woche 1–2: 15+ Verzeichnisse gleichzeitig.** Konkrete Liste aus dem Post: Fazier, PeerPush, BetaList, AlternativeTo, SaaSHub, Uneed, StartupBase, Tiny Launch, Microlaunch, Launching Today, IndieHackers Showcase + kleinere Product-Hunt-Alternativen. Jedes Listing = Do-Follow-Backlink; bei niedriger Domain Rating zählt jeder einzelne. Autor: DR 0 → 33 in 30 Tagen, kostenlos (Agentur-Angebote lagen bei umgerechnet ~900–2.800 €/Monat). → Ergänzt unsere Verzeichnis-Empfehlung (OMR Reviews, Capterra, AppSource) um die Launch-Directory-Ebene — relevant v. a. für galynski.com, das frisch indexiert, aber ohne Backlinks ist.
+3. **Long-Tail-Content statt Kopf-Keywords.** Nicht gegen „best form builder" anschreiben, sondern hunderte spezifische Queries mit 50–200 Suchen/Monat und nahezu null Konkurrenz besetzen (z. B. „typeform alternative for india"). 10 Seiten × 100 Besucher = 1.000/Monat; skaliert linear. → Bestätigt exakt unsere Vergleichsseiten-Strategie („CiraSync Alternative Deutschland", „GAL Sync ohne Intune", „Entra Secret Ablauf Alarm").
+4. **Täglich shippen — Fixes, nicht Features.** Frühe Nutzer, deren Bugs in derselben Woche gefixt wurden, wurden zu organischen Promotern.
+5. **Das Premium-Feature der Konkurrenz kostenlos anbieten** als Conversion-Hook (bei ihm: AI-Formulargenerator, den Typeform/Tally bepreisen).
+6. **Selbstkritik des Autors (ebenso lehrreich):** Feature ohne Nachfrage gebaut (2 Wochen verloren), kein Error-Tracking beim Launch, schwache Free-to-Paid-Conversion, kein Referral-System.
+
+**Einordnung/Vorsicht (aus den Kommentaren):** Mehrere Kommentatoren weisen darauf hin, dass Cloudflare-Zahlen Bot-Traffic enthalten und die 50K daher überzeichnet sein dürften; ein Kommentar nennt den Post Eigenwerbung. Wichtigster Gegen-Punkt (Top-Kommentar-Sinngemäß): „Traffic ≠ Umsatz — wenn die Antwort auf ‚wie viel verdienst du' $0 ist, gehen die Nutzerzahlen gegen 0, sobald du Geld verlangst." Und: „Converting visitors to customers is the most difficult part." → Die Mechanik (Directories, Long-Tail, tägliche Fixes) ist übernehmbar; die Traffic-Zahlen sind kein Beweis für ein funktionierendes Geschäftsmodell. Für SSIG gilt: Preise sind bei allen drei Produkten bereits live — die Monetarisierungslücke des Autors haben wir nicht.
+
+---
+
 ## Block 1 — Pain-Point-Cluster
 
 ### Produkt A — TeamsDashboard
