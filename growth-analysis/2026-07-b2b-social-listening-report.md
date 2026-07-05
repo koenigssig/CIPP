@@ -62,6 +62,46 @@ Kernaussagen des Posts (Form-Builder-SaaS, 4 Monate, 0 € Marketingbudget, DR 0
 
 ---
 
+## Learning 3 — GAL-Sync-Wettbewerbslandschaft: alle bekannten Alternativen & ihre Schwächen (aufgenommen 2026-07-05)
+
+Recherchiert über Capterra/G2-Reviews, Reddit (Composio-API), Anbieter-Websites und Alternativen-Listen (G2/Slashdot/SoftwareAdvice). Ziel: 1-Sterne-Reviews als Roadmap (Learning 2, Punkt 1) und Munition für Vergleichsseiten.
+
+### Vollständige Anbieter-Landschaft (Stand Juli 2026)
+
+| # | Anbieter | Herkunft/Typ | Positionierung | Bekannte Schwächen (Quelle) |
+|---|---|---|---|---|
+| 1 | **CiraSync** | USA, Marktführer | GAL/Public-Folder → Smartphones, Enterprise | Volle Global-Admin-Rechte nötig (Reviewer wünschen Scoping); 10-Lizenzen-Minimum „fast prohibitiv" für kleine Firmen; kein VIP-only-Modell; Setup für Nicht-Techniker kompliziert, Doku-Lücken; Gratis-Einmal-Sync gestrichen; Free-Version instabil >5.000 Kontakte; „pricing adds up fast at scale" (Capterra/G2 + r/sysadmin 1tkuymp, 139 Punkte) |
+| 2 | **itrezzo** | USA (gleiche Firma wie CiraSync) | On-Prem-Variante | Legacy/On-Prem-Fokus; erbt die CiraSync-Preislogik |
+| 3 | **CiraHub** | USA (Schwesterprodukt) | Two-Way-Hub-Sync | Zusatzprodukt, separate Kosten zur CiraSync-Welt |
+| 4 | **Cloudiway GALSync** | Frankreich | Teil einer Migrations-Suite | Migrations-DNA: Nur-Sync-Kunden zahlen Migrations-Infrastruktur mit; Lizenzen werden „verbraucht", nicht wiederverwendbar (90-Tage-Fenster); zieht nur User+Gruppen — bestehende Kontakte und Gäste NICHT; Gruppen kommen als Kontakte an; Setup „mit Experimentieren", Interface veraltet (G2/Capterra, federated.directory) |
+| 5 | **GALSync (NetSec)** | Deutschland | GAL → Mailbox-Kontaktordner | Laut CiraSyncs eigenem Vergleich: weniger Automatisierungs-Optionen; geringe öffentliche Review-Präsenz |
+| 6 | **sync.blue** | Deutschland ⚠️ | Generischer Kontakt-Connector-Hub, 80+ Plattformen | ⚠️ Direktester DE-Wettbewerber: DSGVO, deutsche Rechenzentren, AVV — das „Made in Germany"-Argument allein reicht gegen sync.blue NICHT. Differenzierung: sync.blue ist ein generischer 80-Plattform-Hub (Preis pro Verbindung), GALYNSKI ist spitz auf GAL→native Kontakte gebaut (Verteilungsregeln, Delete-Caps, Audit) |
+| 7 | **Contactzilla** | UK | CardDAV-basiert, zentrale Liste → Phones | Anderes Muster (CardDAV/MDM-Profil statt Exchange-Sync); mailbox-frei, aber Setup je Gerät/MDM nötig |
+| 8 | **CorpSync** | Cloud | GAL → Smartphones/Outlook/Teams | Wenig Review-Substanz auffindbar |
+| 9 | **SyncPenguin** | Cloud | Generischer Two-Way-Sync (auch CRM etc.) | Kein GAL-Spezialist; Preismodell pro Sync-Verbindung |
+| 10 | **Connecting Software (CB Exchange Server Sync)** | AT/SK | Server-zu-Server-Sync inkl. Public Folders | On-Prem-/Serverlastig; kaum Community-Präsenz |
+| 11 | **Sigsync** | Indien | Signatur-Tool mit Kontakt-Sync als Nebenfeature | Kontakt-Sync ist Beiwerk; dünne Review-Basis |
+| 12 | **ContactMesh** | Open Source (Einzelentwickler) | .NET-Tool, M365 → persönliche Kontakte | Selbst hosten (Windows Task Scheduler), kein Support/SLA, Google-Support „less mature", Bus-Faktor 1. Gold-Zitat des Autors: „Nobody wants a sync job that silently deletes the wrong thing" |
+| 13 | **Quest/Binary Tree** | USA | Enterprise-Migration (Legacy) | Migrationstool, kein Dauerbetriebs-Sync; Enterprise-Preise |
+| 14 | **DidItBetter / Add2Exchange** | USA | Legacy On-Prem | Veraltete Architektur, On-Prem-Wartung |
+| 15 | **Microsoft nativ (Workarounds)** | — | Shared Mailbox, Public Folders, Outlook-App-Sync | Der eigentliche „Hauptwettbewerber": GAL synct nativ nicht auf Handys; Public-Folder-Kontakte erscheinen mobil nicht zuverlässig; Outlook-App-Sync erzeugt Chaos bei mehreren Konten (durchgängig belegt in Block 1, Cluster C1–C4) |
+
+### Markt-übergreifende Beschwerde-Muster (tool-agnostisch, aus Reddit)
+
+1. **Dubletten & Datenmüll:** „Why do I have 3 of the same person?", Fotos in Briefmarken-Qualität (r/ShittySysadmin 1sqe9lb — vermutlich geseedet, Muster aber real) → GALYNSKI-Konter: Dublettenbereinigung per E-Mail-Abgleich, automatischer Filter für Räume/Ressourcen/No-Reply.
+2. **Angst vor stillen Massen-Löschungen** (ContactMesh-Autor wörtlich) → GALYNSKI-Konter: Delete-Caps, Drop-Erkennung, Truncation-Abbruch, Audit-Log.
+3. **Feature-Sterben in Bundles:** „MDM dropped our contact sync feature without warning" (r/sysadmin 1m0icic) → höchster Kaufauslöser (Intent 9/10); aktiv nach solchen Threads suchen.
+4. **Kostenexplosion bei Wachstum** (r/sysadmin 1tkuymp) → GALYNSKI-Konter: 4 €/User transparent, Staffel ab 51.
+5. **Global-Admin-Übergabe an US-Anbieter** als Sicherheits-/Compliance-Bedenken → EU-Hosting + Audit-Argument (gilt gegen CiraSync/itrezzo, NICHT gegen sync.blue/NetSec).
+
+### Konsequenzen für Positionierung & Content
+
+- **Vergleichsseiten-Priorität:** 1. CiraSync (meistgesucht, meiste dokumentierte Schwächen), 2. sync.blue (DE-Duell — Spezialist vs. Generalist), 3. Cloudiway (Migrations- vs. Dauerbetriebs-Frame).
+- **Nicht behaupten:** „einzige deutsche Lösung" (sync.blue, NetSec existieren) und nichts über Konkurrenzpreise ohne Datum/Beleg — Preise vor Publikation je Seite aktuell verifizieren.
+- **Quellen:** [Capterra CiraSync](https://www.capterra.com/p/183198/CiraSync/reviews/) · [G2 CiraSync](https://www.g2.com/products/cirasync/reviews) · [G2 Cloudiway](https://www.g2.com/products/cloudiway/reviews) · [federated.directory zu Cloudiway-Pricing](https://www.federated.directory/blog/cloudiway-pricing) · [G2 CiraSync-Alternativen](https://www.g2.com/products/cirasync/competitors/alternatives) · [sync.blue CiraSync-Alternative-Seite](https://www.sync.blue/en/cirasync-alternative) · [Contactzilla CiraSync-Alternative-Seite](https://contactzilla.com/blog/cirasync-alternative-for-easy-contact-syncing) · Reddit-Threads wie in Block 1 verlinkt. Hinweis: CiraSync, sync.blue und Contactzilla betreiben selbst „Alternative zu X"-Vergleichsseiten — das Format ist im Markt etabliert und wird von Google/KI-Engines gut ausgespielt; GALYNSKI fehlt dort bislang komplett.
+
+---
+
 ## Block 1 — Pain-Point-Cluster
 
 ### Produkt A — TeamsDashboard
