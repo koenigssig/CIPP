@@ -102,6 +102,22 @@ Recherchiert über Capterra/G2-Reviews, Reddit (Composio-API), Anbieter-Websites
 
 ---
 
+## Learning 4 — Monats-Learnings aus der SaaS-Community (r/SaaS, r/micro_saas, r/indiehackers — Top-Posts Juni/Juli 2026, aufgenommen 2026-07-05)
+
+Quelle: Top-Posts des letzten Monats über die authentifizierte Reddit-API gezogen (80 Posts gesichtet). Nur Neues gegenüber Learning 1–3:
+
+1. **Free-Tool als Lead-Magnet.** Muster mehrerer Erfolgsposts (u. a. CheckVibe, Security-Scanner, ~$7k in 3 Monaten): kostenloses Mini-Tool zeigt den Schmerz einmalig, das Abo löst ihn dauerhaft. → Für SSIG: **„Secret-Ablauf-Check"** (Read-only-Scan des Tenants → „X Secrets, Y abgelaufen, Z laufen in 30 Tagen ab") als Funnel-Einstieg für SecretExpiry. Konzept: siehe `2026-07-secretexpiry-free-check-konzept.md`.
+2. **Aktivierung messen, nicht Signups.** „272 Signups, der harte Teil kam danach" — Funnel hinter der Registrierung war leer. → GALYNSKI-Aktivierungsmetrik definieren: „erster erfolgreicher Sync innerhalb 24 h"; Registriert-ohne-Consent und Synct-ohne-Zahlung getrennt nachfassen.
+3. **Preiserhöhung als Filter.** $9→$19: halbe Kundschaft weg, gleicher Umsatz, weniger Support (344 Punkte). → GALYNSKIs 4 €/User liegt deutlich unter CiraSync-Niveau; Preis nicht als Hauptargument führen, Erhöhung für Neukunden nicht scheuen, wenn Nachfrage anspringt.
+4. **Fertige Directory-Listen existieren:** DR-sortierte Liste mit 82 geprüften Launch-Directories (https://www.reddit.com/r/micro_saas/comments/1u0mapu/) + gepflegte 200er-Liste (https://www.reddit.com/r/indiehackers/comments/1u9yr7f/) — inkl. Warnung, dass Directories von gratis auf bezahlt flippen. Erspart eigene Recherche für den Directory-Blitz (Learning 2).
+5. **Reddit-Klima verschärft:** „Every second post is an ad" (825 Punkte, Top-2 des Monats in r/SaaS), neue Mod-Regel gegen Promo-SaaS, öffentlich zerlegter Fake-Engagement-Spammer (606 Punkte). → Die 9:1-Regel ist Überlebensbedingung; nur authentische Erfahrungsberichte mit echten Zahlen/Fehlern kommen noch durch.
+6. **Video-Volumen-Strategie:** Candle ($200k MRR): Videos produzieren bis eines Traction hat, dann Gewinner-Format über Kanäle redistribuieren. → Nicht ein perfektes Video, sondern Volumen + Redistribution; für B2B: 30-Sek-Demos auf LinkedIn/YouTube-Shorts.
+7. **Tägliche Distributions-Routine (levels/Marc-Lou-Muster):** morgens shippen → ehrlich dokumentieren (Screenshot, eine Metrik, was kaputt ging) → posten → 10 Leuten antworten ohne zu pitchen → wiederholen. Realistisch: 30 Min/Tag.
+
+Marktbestätigung: „Dein Produkt ist nicht dein Problem, Distribution ist es" war Tenor von drei der zehn Top-Posts des Monats — bestätigt die seit 2026-07-05 laufende SEO-/Sichtbarkeits-Strategie.
+
+---
+
 ## Block 1 — Pain-Point-Cluster
 
 ### Produkt A — TeamsDashboard
