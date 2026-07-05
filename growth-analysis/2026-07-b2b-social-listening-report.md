@@ -8,10 +8,22 @@ Es lagen keine vorab bereitgestellten Rohdaten (Anhänge) vor. Die Analyse basie
 
 - **Reddit:** echte Volltextsuche über die angebundene Reddit-API (u. a. r/sysadmin, r/AZURE, r/msp, r/entra, r/ITManagers, r/microsoft365, r/Intune, r/devops, r/sysadmin-adjacent Threads), inkl. Abruf von Kommentarbäumen einzelner Threads.
 - **Web:** gezielte Websuche + Seitenabruf für techcommunity.microsoft.com, learn.microsoft.com/answers (Microsoft Q&A), administrator.de, Hacker News, Spiceworks, Stack Overflow/Server Fault.
-- **Nicht verfügbar in dieser Session:** ein funktionierendes LinkedIn-Post-Suchwerkzeug (Bright Data/LinkedIn-MCP waren nicht angebunden; das verbundene LinkedIn-Konto liefert keine Post-Suche). LinkedIn-Zahlen in Block 2 sind daher **strukturelle Einschätzungen, keine Messwerte** — klar gekennzeichnet.
+- **Nicht verfügbar in dieser Session (Stand 2026-07-04):** ein funktionierendes LinkedIn-Post-Suchwerkzeug (Bright Data/LinkedIn-MCP waren nicht angebunden; das verbundene LinkedIn-Konto liefert keine Post-Suche). LinkedIn-Zahlen in Block 2 waren daher **strukturelle Einschätzungen, keine Messwerte** — klar gekennzeichnet.
 - **Keine erfundenen Zitate:** Jedes Zitat unten wurde wörtlich aus einem echten Tool-Aufruf übernommen, mit Quelle/Datum wo verfügbar. Wo die Datenlage dünn war, steht **[low-evidence]** statt eines erfundenen Zitats.
 - **Wichtiger Fund:** Zwei Quellen zu TeamsDashboard stammen erkennbar von SSIG-IT selbst (ein r/SaaS-Post des Gründers sowie ein administrator.de-Tutorial von "ssigpk"). Diese wurden **nicht** als unabhängige Marktvalidierung gezählt, sondern explizit ausgeschlossen/markiert.
 - Bei GALYNSKI wurden mehrere CiraSync-nahe Threads/Accounts identifiziert, deren Struktur nach SEO-/Marketing-Seeding aussieht (immer verlinkt auf cirasync.com, aus r/CiraSync). Diese sind gekennzeichnet und **nicht** in die Häufigkeits-/Intent-Bewertung eingeflossen.
+
+### Update 2026-07-05 — echte LinkedIn-Post-Suche nachgeholt
+
+In dieser Folgesession wurde der zuvor fehlende LinkedIn-Suchbaustein über den **Apify-MCP (Composio-Toolkit `apify`)** nachgerüstet: Verbindung zu einem eigenen Apify-Konto hergestellt und der Actor **HarvestAPI „Linkedin Post Search Scraper (No Cookies)"** (`harvestapi/linkedin-post-search`, 4.9★, 2,87 Mio. Runs) für alle drei Produkte live laufen lassen (2 Suchanfragen je Produkt, `postedLimit: year`, `sortBy: date`, keine Reaction-/Kommentar-Anreicherung). Gesamtkosten: **$0,062** für 61 gescrapte Posts.
+
+Ergebnis, ehrlich bewertet:
+- **TeamsDashboard (A):** Suchen "Microsoft Teams presence dashboard" / "wer ist online Teams Dashboard" lieferten 30 Posts — **keiner davon thematisch relevant** (Marketing-, HR- und Recruiting-Spam, u. a. weil LinkedIns eigene Suche bei Mehrwort-Nischenphrasen offenbar eher locker/semantisch matcht statt exakt). Die Volumen-Schätzung für Produkt A in Block 2 bleibt daher weiterhin ein **Fachurteil, kein Messwert**.
+- **SecretExpiry (B):** Suchen "Azure AD app secret expiring" / "client secret abgelaufen Azure AD" lieferten 15 Posts, davon mehrere **direkt themenrelevant und real** (siehe Zitate in Block 1, Cluster B1/B3). Erstmals echtes LinkedIn-Signal für dieses Produkt.
+- **GALYNSKI (C):** Suchen "global address list sync mobile contacts" / "GAL Sync Kontakte Handy Outlook" lieferten 16 Posts, überwiegend Market-Research-/CRM-Spam, aber **ein direkt relevanter, organischer deutscher Treffer** zum Caller-ID-Problem (siehe Cluster C2).
+- **Neuer Fund (Wettbewerb):** Ein LinkedIn-Post von "Model Technology Solutions" bewirbt ein Feature-Update ihres Produkts **ReconAI** exakt für "Certificate & App Secret Expiration Monitoring" — ein bislang nicht erfasster, direkter Wettbewerber für SecretExpiry (Quelle: https://www.linkedin.com/posts/model-technology-solutions_model-technology-solutions-it-infrastructure-activity-7430354501204684800-7LeF, ca. 4 Monate alt).
+
+Fazit: LinkedIns öffentliche Suche liefert für generische Wohlfühl-Phrasen ("wer ist online") kaum Signal, aber für konkrete technische Fachbegriffe (Azure/Entra-Terminologie, spezifische Schmerzpunkte) brauchbare, reale Treffer. Die Blockeinträge unten wurden entsprechend aktualisiert; nicht bestätigte Bereiche bleiben klar als Schätzung markiert.
 
 ---
 
@@ -67,7 +79,9 @@ Häufigkeit: nicht belastbar · Sentiment: neutral · Buying-Intent: 2/10
 Abgelaufene Client Secrets/Zertifikate legen ohne Vorwarnung produktive Systeme lahm.
 - „A few months ago, I was about to log off early on a Friday when I got one of those 'loved' Friday afternoon calls—'Hey, we can't access the system.' No warning, no alert, just a broken integration…“ — r/AZURE, "App Secret Expired Silently – Built an Email Warning System Before It Ruins My Weekend Again!", 2025-02-05. https://www.reddit.com/r/AZURE/comments/1ii6ejo/
 - „Hello i just found this randomly via google, as one of our important applications had an expired key today, and without warning took down our VPN. Its insane that microsoft has no built-in way to alert to this“ — r/ITManagers, Kommentar u/qawas, 2026-06-15. https://www.reddit.com/r/ITManagers/comments/1j11xsi/
-Häufigkeit: durchgängig häufigstes Muster über mehrere Threads · Sentiment: frustriert · Buying-Intent: 9/10
+- „Tired of waking up to P1 incidents just because an Azure AD client secret expired? I finally got tired of it too. Most outages don't start with a bang! they start with silence.“ — LinkedIn, Basir Y. (Cloud Infrastructure & DevOps Architect), ca. 2026-05 (17 Likes, 4 Kommentare). https://www.linkedin.com/posts/byahya_azure-cloudsecurity-devops-activity-7447187338625216512-lRUH [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05]
+- „Tired of unexpected outages due to expired secrets or certificates in Azure AD? I've developed a PowerShell script leveraging Microsoft Graph that proactively m[onitors]…“ — LinkedIn, Shivaprasad M S (Cloud Identity Architect), ca. 2025-08. https://www.linkedin.com/posts/shivaprasadms_github-shivaprasadarmazure-app-credential-expiry-monitor-activity-7347972292930387968-X8ai [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05]
+Häufigkeit: durchgängig häufigstes Muster über mehrere Threads/Plattformen · Sentiment: frustriert · Buying-Intent: 9/10
 
 **2. Microsofts native Alarmierung reicht nicht**
 Ein Alert 30 Tage vorher wird leicht übersehen.
@@ -79,7 +93,10 @@ Häufigkeit: hoch, wiederkehrend · Sentiment: frustriert · Buying-Intent: 7/10
 Fehlende Eigentümer-Zuordnung ist oft schwerer zu lösen als das Ablaufdatum selbst.
 - „Boy, if this isn't the million dollar question in IT. 'Who owns this poorly maintained X with no documentation or description?' Lazy admins will say helpdesk should have been alerted… Helpdesk will say 'wtf is an app registration?'“ — r/sysadmin, u/arrivederci_gorlami, 2026-03-26. https://www.reddit.com/r/sysadmin/comments/1s4k9fp/
 - „Ownership is always the hardest part, not the expiry itself. Without clear mapping, rotation just becomes guesswork“ — r/sysadmin, u/Worried-Bother4205, gleicher Thread.
+- „💡🚀 AUDIT all your MS Entra ID Service Principals with my custom PowerShell Script and prevent outages“ — LinkedIn, Agustín Borrajo (Azure Infrastructure Administrator), ca. 2026-01, eigenes GitHub-Tool "EntraSPaudit.ps1" verlinkt. https://www.linkedin.com/posts/agustinborrajo_audit-all-your-ms-entra-id-service-activity-7388705862434877440-sXnQ [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05] — bestätigt DIY-Ownership-Audits auch auf LinkedIn, nicht nur Reddit.
 Häufigkeit: zentrales, wiederkehrendes Thema · Sentiment: frustriert · Buying-Intent: 6/10
+
+**Wettbewerbsbeobachtung (neu, via LinkedIn):** „Microsoft made certificate and app secret sprawl everyone's problem. Model built the fix into #ReconAI! New in ReconAI: Certificate & App Secret Expiration Monitoring“ — LinkedIn, Model Technology Solutions (Unternehmensseite, 516 Follower), ca. 2026-03. https://www.linkedin.com/posts/model-technology-solutions_model-technology-solutions-it-infrastructure-activity-7430354501204684800-7LeF [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05]. ReconAI von Model Technology Solutions bewirbt praktisch dasselbe Kernfeature wie SecretExpiry — bislang nicht als Wettbewerber erfasst, sollte in die Konkurrenzbeobachtung aufgenommen werden.
 
 **4. MSP-/Multi-Tenant-Skalierungsproblem**
 Über viele Kunden-Tenants hinweg wird Secret-Monitoring unübersichtlich — direkter ICP-Treffer.
@@ -120,8 +137,8 @@ Häufigkeit: hoch · Sentiment: frustriert · Buying-Intent: 7/10
 **2. Unbekannte/leere Caller-ID bei internen Anrufen**
 Ohne GAL-Sync zeigen Anrufe von Kolleg:innen nur Nummern statt Namen.
 - „Caller ID doesn't work.“ — r/ShittySysadmin, u/Pale-Web3080, 2026-04-20 (Hinweis: dieser Thread wirkt teils marketing-seedet, siehe Transparenzhinweis oben). https://www.reddit.com/r/ShittySysadmin/comments/1sqe9lb/
-- [low-evidence — kein unabhängiges, klar organisches Zweitzitat gefunden, das exakt "unbekannter Kollege ruft an" beschreibt]
-Häufigkeit: mechanismus gut belegt, direktes Zitat dünn · Sentiment: frustriert · Buying-Intent: 6/10
+- „Kennt Ihr das auch? Ihr bekommt einen Anruf aufs Handy .... irgendeine Nummer aus der Firma .... und ihr wisst nicht wer es ist? ggf. ist es auch ein verpasster Anruf ..... seit Jahren höre ich genau dieses Problem immer…“ — LinkedIn, Roland Eich (Evergreen Manager bei Mobil ISC GmbH), ca. 2026-05. https://www.linkedin.com/posts/roland-eich-10bb2b247_kennt-ihr-das-auch-ihr-bekommt-einen-anruf-activity-7456445428130066433-G7ts [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05] — organischer, unabhängiger deutscher Treffer, bestätigt das Problem jetzt auch auf LinkedIn.
+Häufigkeit: Mechanismus jetzt plattformübergreifend (Reddit + LinkedIn) belegt · Sentiment: frustriert · Buying-Intent: 6/10
 
 **3. Manuelles Copy-Paste hält Kontakte nicht aktuell**
 Führungskräfte/Mitarbeitende kopieren Kontakte manuell, was schnell veraltet.
@@ -174,9 +191,9 @@ Häufigkeit: nicht belastbar (Authentizität fraglich) · Sentiment: neutral · 
 | 12 | Forum | administrator.de | DE | Mittel (verifizierte Threads für A und C) | A/B/C | Forenbeitrag/Comment | 4 |
 | 13 | Community | Spiceworks Community | EN | Niedrig (in dieser Recherche keine relevanten Treffer gefunden) | A/B/C | Post | 2 |
 | 14 | Forum/News | Hacker News | EN | Mittel (Cert-Ausfall-Threads mit hohem Engagement) | B | Comment | 3 |
-| 15 | Social | LinkedIn (Posts, Kommentare, Gruppen) | DE/EN | **Nicht gemessen** — kein funktionierendes Such-Tool in dieser Session; strukturell als Kernkanal für B2B-Entscheider:innen einzuschätzen | A/B/C | Post | 5 (strategisch, trotz fehlender Messung) |
+| 15 | Social | LinkedIn (Posts, Kommentare, Gruppen) | DE/EN | **Teilgemessen (2026-07-05, via Apify/HarvestAPI, 61 Posts geprüft):** A — kein relevantes Signal in 30 Posts (Fachurteil bleibt Schätzung); B — echtes, dichtes Signal aus 15 Posts (mehrere direkt relevante Fachbeiträge + 1 Wettbewerber gefunden); C — schwaches, aber reales Signal aus 16 Posts (1 organischer Treffer) | A/B/C | Post | 5 (strategisch; für B jetzt messbar bestätigt) |
 
-Priorisierung nach Signal-Dichte × Buying-Intent × Wettbewerbs-Freiheit: Reddit r/sysadmin, r/AZURE und r/msp liefern die dichtesten, aktuellsten (2025–2026) und am stärksten kaufintent-tragenden Signale und sollten operativ Vorrang haben. LinkedIn bleibt strategisch Priorität 5, weil es der Hauptkanal für Entscheider:innen-Content ist — die Volumenschätzung ist hier aber ein Fachurteil, kein Messwert, und sollte in einer Folgerunde mit einem echten LinkedIn-Suchwerkzeug (z. B. Crustdata-Anbindung) verifiziert werden.
+Priorisierung nach Signal-Dichte × Buying-Intent × Wettbewerbs-Freiheit: Reddit r/sysadmin, r/AZURE und r/msp liefern weiterhin die dichtesten, aktuellsten (2025–2026) und am stärksten kaufintent-tragenden Signale und sollten operativ Vorrang haben. Die LinkedIn-Nachrecherche vom 2026-07-05 bestätigt: für Produkt B (SecretExpiry) ist LinkedIn ein echter, messbarer Kanal mit Fachpublikum (Azure/Entra-Admins) und sogar Wettbewerbssignalen; für Produkt A (TeamsDashboard) liefert die Suche mit generischen deutschen Phrasen dagegen nur Rauschen — hier bräuchte es engere, englischsprachige Fachbegriffe oder Profil-/Company-Filter statt freier Keyword-Suche, um brauchbares Signal zu bekommen.
 
 ---
 
@@ -475,7 +492,7 @@ Compliance: Ja.
 - ✅ Keine DSGVO-sensiblen Namen/PII in der Ausgabe — reale Reddit-Usernamen wurden nur bei öffentlich einsehbaren, bereits pseudonymen Forenbeiträgen als Quellenangabe zitiert (übliche Zitierpraxis für öffentliche Foren-Posts), keine Klarnamen oder Kontaktdaten Dritter.
 - ✅ Keine falschen Produkt-Behauptungen — alle CTAs/Post-Ideen nutzen ausschließlich Features aus der Kontext-Sektion (Karten-/Listenansicht, Vollbild-Lobby-Mode, Zero-Knowledge, Multi-Tenant, EU-Hosting, BYOD ohne MDM etc.).
 - ✅ Deutsche und englische Version für Hooks (Block 6), Post-Ideen (Block 4) und Kommentare (Block 5) vorhanden.
-- ⚠️ LinkedIn-Volumendaten in Block 2 sind Schätzungen, keine Messwerte (siehe Methodik-Hinweis oben) — für belastbare Zahlen wird eine Folgerecherche mit funktionierendem LinkedIn-Such-Tool empfohlen.
+- ✅ LinkedIn-Nachrecherche (2026-07-05, Apify/HarvestAPI, 61 Posts, $0,062 Gesamtkosten) durchgeführt — für Produkt B jetzt echte Messwerte inkl. neuem Wettbewerbsfund (ReconAI), für Produkt A weiterhin nur Schätzung (Suche lieferte kein relevantes Signal), für Produkt C ein einzelner organischer Treffer. Details siehe Update-Abschnitt in der Methodik oben und Block 2, Zeile 15.
 - ⚠️ TeamsDashboard-Cluster 6-8 sowie GALYNSKI-Cluster 2 und 8 sind bewusst mit [low-evidence] gekennzeichnet, da die Quotenlage dünn oder die Quelle fraglich authentisch war.
 
 ---
