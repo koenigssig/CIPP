@@ -25,6 +25,8 @@ Ergebnis, ehrlich bewertet:
 
 Fazit: LinkedIns öffentliche Suche liefert für generische Wohlfühl-Phrasen ("wer ist online") kaum Signal, aber für konkrete technische Fachbegriffe (Azure/Entra-Terminologie, spezifische Schmerzpunkte) brauchbare, reale Treffer. Die Blockeinträge unten wurden entsprechend aktualisiert; nicht bestätigte Bereiche bleiben klar als Schätzung markiert.
 
+**Weitere Runden (gleicher Tag):** Direkte Marken-Suche nach "ReconAI"/"CiraSync" fand primär den Eigen-Content der Wettbewerber (Marketing-/Recruiting-Posts) — für organische Produkt-Platzierung ungeeignet, da Kommentare dort wie Trolling auf fremdem Terrain wirken würden. Ergiebiger war eine dritte Runde mit reinen Schmerzpunkt-Begriffen ohne Markennamen: sie fand für GALYNSKI zwei weitere organische, zur Diskussion einladende Posts sowie drei neue Wettbewerber (ContactMesh, Sigsync, Connecting Software — siehe Cluster C2). Für TeamsDashboard blieb auch ein dritter Anlauf (englische Fachbegriffe wie "Teams presence dashboard") ergebnislos — das Thema scheint auf LinkedIn in durchsuchbarer Form nicht präsent zu sein; hier wird keine weitere Suchinvestition empfohlen. Gesamtkosten über alle Runden: rund **$0,16**.
+
 ---
 
 ## Block 1 — Pain-Point-Cluster
@@ -138,7 +140,15 @@ Häufigkeit: hoch · Sentiment: frustriert · Buying-Intent: 7/10
 Ohne GAL-Sync zeigen Anrufe von Kolleg:innen nur Nummern statt Namen.
 - „Caller ID doesn't work.“ — r/ShittySysadmin, u/Pale-Web3080, 2026-04-20 (Hinweis: dieser Thread wirkt teils marketing-seedet, siehe Transparenzhinweis oben). https://www.reddit.com/r/ShittySysadmin/comments/1sqe9lb/
 - „Kennt Ihr das auch? Ihr bekommt einen Anruf aufs Handy .... irgendeine Nummer aus der Firma .... und ihr wisst nicht wer es ist? ggf. ist es auch ein verpasster Anruf ..... seit Jahren höre ich genau dieses Problem immer…“ — LinkedIn, Roland Eich (Evergreen Manager bei Mobil ISC GmbH), ca. 2026-05. https://www.linkedin.com/posts/roland-eich-10bb2b247_kennt-ihr-das-auch-ihr-bekommt-einen-anruf-activity-7456445428130066433-G7ts [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05] — organischer, unabhängiger deutscher Treffer, bestätigt das Problem jetzt auch auf LinkedIn.
+- „📱 Outlook Mobile Not Syncing? Try These 10 Fixes... What is your 'go-to' fix for mobile sync issues? Let's discuss below!“ — LinkedIn, Hitendra Bhadoria, ca. 2026-04 (11 Likes, aktive Diskussionsaufforderung). https://www.linkedin.com/posts/hitendra-bhadoria-0a9848145_microsoft365-outlook-itsupport-activity-7450593686502998017-GwGi [via Apify/HarvestAPI LinkedIn-Suche, 2026-07-05]
 Häufigkeit: Mechanismus jetzt plattformübergreifend (Reddit + LinkedIn) belegt · Sentiment: frustriert · Buying-Intent: 6/10
+
+**Wettbewerbsbeobachtung (neu, via LinkedIn, 2026-07-05):** Drei bislang nicht erfasste Wettbewerber für GALYNSKI gefunden:
+- **ContactMesh** (Open-Source-.NET-Tool von Zunair Fayaz, GitHub) — synct M365-Verzeichnis/Gruppen/Shared Contacts in persönliche Outlook-Kontakte, adressiert explizit "Mobile caller ID needs actual personal contacts". Autor bittet aktiv um Feedback von "IT admin, ops engineer, MSP". https://www.linkedin.com/posts/zunairf_github-zunaircontactmesh-contactmesh-activity-7470687990046982144-tDBt
+- **Sigsync** — etabliertes Signatur-/Kontakt-Sync-Produkt (LinkedIn-Unternehmensseite, 9 Likes auf jüngstem Post). https://www.linkedin.com/posts/sigsync_activity-7459908318505914368-l_VG
+- **Connecting Software (CB Exchange Server Sync)** — Case Study zu Kontakt-/Kalender-/Public-Folder-Sync für ein Schweizer Unternehmen (Züger Frischkäse AG). https://www.linkedin.com/posts/connectingsoftware_when-z%C3%BCger-frischk%C3%A4se-ag-needed-a-future-proof-activity-7470052164854501376-SOpK
+
+Damit sind für GALYNSKI jetzt fünf bekannte Wettbewerber dokumentiert (CiraSync, Cloudiway, Binary Tree aus der Erstrecherche + ContactMesh, Sigsync, Connecting Software neu) — Wettbewerbslandschaft ist dichter als ursprünglich angenommen.
 
 **3. Manuelles Copy-Paste hält Kontakte nicht aktuell**
 Führungskräfte/Mitarbeitende kopieren Kontakte manuell, was schnell veraltet.
