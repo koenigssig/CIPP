@@ -131,6 +131,22 @@ Landingpage-Struktur ist vorhanden; EN-Variante mit `hreflang`-Tags (de/en) einp
 
 ---
 
+### 1.4 teamsdashboard.com: Subdomain-Kannibalisierung (ergänzt 2026-07-08 nach GSC-Analyse)
+
+**Problem:** Die Search Console zeigt, dass `app.teamsdashboard.com`, `demo.teamsdashboard.com` und `docs.teamsdashboard.com` für dieselben Queries wie die Startseite ranken („teams dashboard", „team dashboard", „dashboard teams") — auf Positionen 26–83. Sie verwässern damit das Ranking der Hauptseite.
+
+**Fix:**
+- `app.teamsdashboard.com` (Login) und `demo.teamsdashboard.com`: `<meta name="robots" content="noindex">` setzen — Login-/Demo-Oberflächen sollen nicht in der Suche erscheinen.
+- `docs.teamsdashboard.com`: darf indexiert bleiben, aber Startseiten-Title dort auf Doku-Begriffe ausrichten („TeamsDashboard Dokumentation") statt generisch.
+
+**Verifikation:**
+```bash
+curl -s https://app.teamsdashboard.com/ | grep -i 'noindex'
+curl -s https://demo.teamsdashboard.com/ | grep -i 'noindex'
+```
+
+---
+
 ## Checkliste zum Abhaken
 
 - [ ] 1.1 secretexpiry.com Canonical auf www + Sitemap-URLs auf www
