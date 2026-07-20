@@ -1,6 +1,6 @@
 # Prompt-Vorlage: B2B-Produkt-Sichtbarkeits- & Wachstumsrecherche
 
-**Stand:** 2026-07-20 · **Herkunft:** destilliert aus zwei Claude-Code-Sessions für SSIG-IT (Erstrecherche + laufende Betreuung von TeamsDashboard/SecretExpiry/GALYNSKI/ssig-work)
+**Stand:** 2026-07-20 (überarbeitet) · **Herkunft:** destilliert aus zwei Claude-Code-Sessions für SSIG-IT (Erstrecherche + laufende Betreuung von TeamsDashboard/SecretExpiry/GALYNSKI/ssig-work), inkl. Nachschärfung nach Selbst-Review der Lücken zwischen tatsächlicher Arbeit und erster Fassung
 
 Diese Vorlage ist so gebaut, dass **nur der Abschnitt „Auszufüllen" unten ausgetauscht werden muss** — der Rest des Prompts ist produkt-/branchenneutral und funktioniert für jedes B2B-SaaS- oder lokale Dienstleistungsprodukt.
 
@@ -26,8 +26,9 @@ Firma: [FIRMENNAME]
 Region/Sitz: [z.B. Ort, Bundesland/Land]
 
 Produkte:
-- [PRODUKT_A_NAME]: [ein Satz — was es tut / welches konkrete Problem es löst]
-- [PRODUKT_B_NAME]: [ein Satz]
+- [PRODUKT_A_NAME]: [ein Satz — was es tut / welches konkrete Problem es löst] —
+  Typ: [SaaS/digital ODER lokal/standortgebunden]
+- [PRODUKT_B_NAME]: [ein Satz] — Typ: [...]
 - (weitere nach Bedarf)
 
 Domains:
@@ -57,13 +58,24 @@ Tool-Ergebnis stammen und mit Quelle/Datum belegt sein. Wo die Datenlage dünn i
 ## Kontext
 Firma: [FIRMENNAME], Region: [REGION]
 Produkte:
-- [PRODUKT_A_NAME]: [Zweck/Kernschmerzpunkt]
-- [PRODUKT_B_NAME]: [Zweck/Kernschmerzpunkt]
+- [PRODUKT_A_NAME]: [Zweck/Kernschmerzpunkt] — Typ: [SaaS/digitales Produkt ODER lokales/
+  standortgebundenes Geschäft]
+- [PRODUKT_B_NAME]: [Zweck/Kernschmerzpunkt] — Typ: [...]
 Domains:
 - Hauptseite: [DOMAIN]
 - Produktseiten: [DOMAIN_A], [DOMAIN_B]
 Zielmarkt: DACH zuerst, EN parallel (anpassen falls anders)
 Budget: nur Eigenzeit, kein Ads-Budget (anpassen falls anders)
+
+## Phase 0 — Klärungsfragen (falls oben nicht schon beantwortet)
+Bevor in die Tiefe recherchiert wird, kurz klären (per Rückfrage, nicht raten):
+- Falls mehrere Produkte/Standbeine existieren: welches soll priorisiert werden, oder alle
+  gleichzeitig?
+- Zielmarkt und Budget/Zeit bestätigen, falls die Standardwerte oben nicht passen
+- Status jedes Produkts: bereits live/verkaufsfertig, oder noch in Entwicklung? (ändert,
+  wie weit Phase 4/6 schon umsetzbar sind)
+- Gibt es bereits vorhandenes Recherche-Material (Rohdaten, frühere Reports), das als Basis
+  dienen soll, statt bei null zu starten?
 
 ## Phase 1 — Bestandsaufnahme
 Rufe jede genannte Domain ab (curl mit Browser-User-Agent in einer Remote-Bash-Sandbox —
@@ -84,6 +96,20 @@ Falls LinkedIn-Recherche gewünscht und Apify verfügbar: LinkedIn-Post-Search-A
 (z.B. über Composio-Apify-Toolkit). Kurze, spezifische Suchbegriffe (2-4 Wörter) schlagen
 lange Phrasen deutlich. Vor dem ersten Lauf Kosten transparent machen und Rückmeldung
 einholen, danach mit Kostenobergrenze (maxTotalChargeUsd) je Lauf arbeiten.
+Hinweis Reddit-Share-Links (reddit.com/r/.../s/...): lassen sich bot-seitig fast nie
+auflösen (403). Bei einem geteilten Share-Link stattdessen den Subreddit direkt nach
+Titel/Thema durchsuchen, statt Zeit mit dem Link zu verlieren.
+
+## Phase 2b — Allgemeiner Wachstums-Learning-Sweep (optional, unabhängig vom Produkt)
+Zusätzlich zur produktspezifischen Pain-Point-Recherche: regelmäßig (z.B. monatlich) die
+Top-Posts der letzten Woche/des letzten Monats aus allgemeinen Gründer-/SaaS-Growth-
+Communities ziehen (z.B. r/SaaS, r/micro_saas, r/indiehackers oder branchenäquivalente
+Pendants). Ziel ist NICHT Pain-Point-Material für ein bestimmtes Produkt, sondern
+übertragbare Taktiken (Launch-Directories, SEO-/AEO-Kniffe, Pricing-Learnings, Content-
+Formate). Jeden Fund kurz gegen die eigene Situation prüfen (passt das Budget/der
+Reifegrad?) und als eigenständiges „Learning" dokumentieren, nicht ungeprüft übernehmen —
+Community-Erfolgszahlen (Traffic, MRR) sind oft überzeichnet und kein Beweis für ein
+funktionierendes Geschäftsmodell, nur für eine funktionierende Taktik.
 
 ## Phase 3 — Wettbewerbslandschaft
 Für jedes Produkt: alle bekannten Alternativen identifizieren (Websuche + G2/Capterra-
@@ -94,20 +120,50 @@ Marketing-Feed der Konkurrenz — für organische Platzierungs-Chancen sind neut
 Schmerzpunkt-Posts (ohne Konkurrenznennung) ergiebiger.
 
 ## Phase 4 — Content-Strategie & fertige Assets
-Pro Produkt:
+
+**Weiche zuerst:** Ist das Produkt ein SaaS-/digitales Produkt oder ein lokales/
+standortgebundenes Geschäft (Laden, Coworking, Praxis, Beratung vor Ort)? Bei lokalen
+Geschäften unten mit „4L" statt „4S" weiterarbeiten — die Taktiken unterscheiden sich
+grundlegend, nicht nur graduell.
+
+### Phase 4S — SaaS-/digitales Produkt
 - Content-Kalender je Plattform (Frequenz, Ton, Kommentar:Post-Ratio — in Foren/Reddit
   9:1-Regel, sonst wirkt es wie Spam)
 - 8+ Post-Ideen mit Hook (Zielsprachen), Kernaussage, CTA, Hashtags, Visual-Idee — jede aus
   einem echten recherchierten Pain-Point abgeleitet, nicht generisch
 - Kommentar-Vorlagen für konkrete gefundene Posts (nicht generisch): Mehrwert zuerst,
-  Produktname optional dezent einbauen (auf Wunsch), endet mit echter Frage statt Verkaufs-
-  CTA. Nie unter Werbe-Posts von Wettbewerbern selbst kommentieren.
+  endet mit echter Frage statt Verkaufs-CTA, Sprache = Sprache des Original-Posts. Nie
+  unter Werbe-Posts von Wettbewerbern selbst kommentieren. Plattform-Konvention beachten:
+  Reddit/Foren strikt 9:1 und Produktname eher weglassen (wirkt sonst wie Spam); LinkedIn
+  toleriert dezente Produktnennung besser („das lösen wir mit X" statt reiner Pitch) — im
+  Zweifel beide Varianten anbieten und den Nutzer wählen lassen.
 - Use-Case-/Zielgruppen-Landingpages je Kernzielgruppe im AEO-Format: H1, Quick-Answer-Box
   (40-60 Wörter), fragenbasierte H2s mit Fließtext, 6 FAQs als FAQPage-JSON-LD, Title/Meta-
   Description, interne Verlinkung. Alle Produktaussagen live auf der Website verifizieren.
 - Vergleichsseiten „[Produkt] vs. [Wettbewerber]" im selben Format, bewusst fair (Abschnitt
   „wann ist der Wettbewerber die bessere Wahl"), Wettbewerber-Preis-/Feature-Aussagen vor
   Veröffentlichung mit Stand-Datum kennzeichnen und gegenprüfen lassen
+- Kanal-Erweiterung über Reddit/LinkedIn hinaus prüfen, passend zur Zielgruppe: YouTube-
+  Tutorials (evergreen, ranken mit), bei Admin-/Dev-Produkten GitHub + PowerShell Gallery/
+  Paketmanager (Open-Source-Tool als Türöffner), Fach-Discord/Slack-Communities, Quora/
+  Medium-Zweitverwertung bestehender Artikel, Fachforen-Blogs (z.B. Hersteller-Community-
+  Blogs), Podcast-Gastauftritte, Verzeichnis-/Review-Seiten der Branche
+- Falls aus Phase 7 bereits Suchdaten vorliegen: Content-Ideen zuerst aus den dortigen
+  Keyword-Gaps ableiten (belegte Nachfrage), erst danach aus reiner Pain-Point-Recherche
+  ergänzen (angenommene Nachfrage) — Datenlage schlägt Bauchgefühl, wenn beides verfügbar
+  ist.
+
+### Phase 4L — Lokales/standortgebundenes Geschäft
+- Google Business Profile als wichtigster Hebel: Kategorie, Fotos, Öffnungszeiten,
+  Buchungslink, aktiv erste Bewertungen einsammeln
+- Lokale/regionale Portale und Branchenverzeichnisse (nicht die globalen SaaS-Directories
+  aus Phase 4S), plus Verzeichnisse, in denen die lokale Konkurrenz bereits gelistet ist
+- Differenzierung über Standort/Region statt über Content-Volumen herausarbeiten (was kann
+  die Konkurrenz in der nächsten Stadt nicht bieten?)
+- Kanal-Realismus: Instagram/Facebook-Lokalgruppen und Google Maps schlagen hier meist
+  LinkedIn; lokale Presse und Events (eigene Veranstaltungen im Space/vor Ort) sind ein
+  Hebel, den SaaS-Produkte nicht haben
+- LocalBusiness-Schema (JSON-LD) mit Adresse/Öffnungszeiten/Geo ergänzen
 
 ## Phase 5 — Technisches SEO-Setup
 Falls Google Search Console verfügbar: alle Domains als Properties verifizieren/prüfen,
@@ -118,6 +174,12 @@ ClaudeBot/PerplexityBot erlauben). Bot-Sichtbarkeits-Check:
 `curl -A "bingbot/2.0" <url> | grep "<h1"` — leeres Ergebnis heißt kaputtes Prerendering.
 Ergebnis als EIGENSTÄNDIGE Techniker-Arbeitsanweisung dokumentieren (priorisiert, mit
 Verifikations-Befehl je Punkt, Checkliste), getrennt von der Marketing-Strategie.
+Wichtig: Search-Console-Daten für ALLE Firmendomains ziehen, nicht nur für die
+Zieldomain des jeweiligen Produkts — dabei tauchen manchmal unerwartete, bereits
+rankende Seiten auf anderen Domains auf (z.B. ein Support-/Doku-Artikel, der zufällig für
+einen ganzen Query-Cluster rankt). Solche Funde zuerst per Title-/Meta-Optimierung (CTR-
+Fix) heben, bevor neuer Content dafür geplant wird — eine Seite mit brauchbarer Position
+aber 0 Klicks ist meist ein schnellerer Hebel als ein neuer Artikel.
 
 ## Phase 6 — Kostenloses Lead-Magnet-Tool (optional, pro Produkt prüfen)
 Für das Produkt mit dem stärksten, konkretesten Schmerzpunkt: prüfen, ob ein kleines
@@ -135,6 +197,10 @@ aufkommenden Queries. Wochenvergleich statt Einzelstand. Wenn zuvor identifizier
 Punkte (Techniker-Fixes, geplante Seiten) über mehrere Wochen unverändert bleiben: das
 explizit benennen statt stillschweigend erneut zu berichten — im Zweifel aktiv
 vorschlagen, den Loop zu pausieren/zu eskalieren, statt wirkungslos weiterzulaufen.
+Bei den wöchentlichen Vorschlägen die Reihenfolge einhalten: zuerst bestehende Seiten mit
+Position aber ohne Klicks optimieren (CTR-Fix, siehe Phase 5), erst danach neue Artikel
+vorschlagen — und neue Artikel-Ideen wenn möglich direkt aus den Keyword-Gaps dieser
+Property ableiten statt aus der allgemeinen Pain-Point-Recherche (Rückkopplung zu 4S).
 
 ## Arbeitsweise (gilt für alle Phasen)
 - Keine erfundenen Zitate, Zahlen oder Wettbewerber-Fakten — alles mit Tool-Beleg und
