@@ -129,6 +129,18 @@ Für alle künftigen Blogartikel und Ratgeberseiten (alle drei Produkte) folgend
 
 Landingpage-Struktur ist vorhanden; EN-Variante mit `hreflang`-Tags (de/en) einplanen. Kein Blocker, aber Voraussetzung für den internationalen Markt.
 
+### 3.4 teamsdashboard.com: Microsoft AppSource / Teams-Store-Listung — Backlog (größeres Projekt)
+
+**Warum:** Direkte Wettbewerber wie „Team Board“ (teamboard.in) sind im Teams-App-Katalog gelistet und werden direkt aus dem Teams-Client installiert (64K+ Nutzer laut Eigenangabe) — TeamsDashboard fehlt dort komplett. Details siehe `growth-analysis/2026-07-teamsdashboard-vergleichs-und-directory-strategie.md`.
+
+**Aufwand:** Kein kurzfristiger Fix — erfordert ein Teams-App-Manifest (mind. ein Personal-Tab, der das bestehende Web-Dashboard einbettet), Microsoft-Zertifizierung/Validierung (mehrwöchiger Review) und ggf. Teams-SSO-Integration. Realistischer erster Schritt: ein einfacher iFrame-Tab statt einer vollen Bot-/Messaging-Extension.
+
+### 3.5 secretexpiry.com: Azure Marketplace / Microsoft AppSource-Listung — Backlog (größeres Projekt)
+
+**Warum:** Kunden suchen aktiv im Azure Marketplace nach Security-/Compliance-Tools für ihren Tenant; aktuell keine Listung gefunden. Details siehe `growth-analysis/2026-07-secretexpiry-vergleichs-und-directory-strategie.md`.
+
+**Aufwand:** Partner-Center-Registrierung, technische Validierung, ggf. SaaS-Fulfillment-API für die Abrechnung. Kein kurzfristiger Fix, aber der wirkungsvollste Vertriebskanal für ein Entra-ID-natives Produkt.
+
 ---
 
 ### 1.4 teamsdashboard.com: Subdomain-Kannibalisierung (ergänzt 2026-07-08 nach GSC-Analyse)
@@ -158,3 +170,5 @@ curl -s https://demo.teamsdashboard.com/ | grep -i 'noindex'
 - [ ] 3.1 KI-Crawler-robots.txt auf galynski.com + secretexpiry.com
 - [ ] 3.2 AEO-Artikel-Template (Quick-Answer + Frage-H2s + FAQ-JSON-LD)
 - [ ] 3.3 galynski.com /en mit hreflang (Backlog)
+- [ ] 3.4 teamsdashboard.com AppSource/Teams-Store-Listung (Backlog, größeres Projekt)
+- [ ] 3.5 secretexpiry.com Azure-Marketplace-Listung (Backlog, größeres Projekt)
