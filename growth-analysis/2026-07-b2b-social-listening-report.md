@@ -27,6 +27,35 @@ Fazit: LinkedIns öffentliche Suche liefert für generische Wohlfühl-Phrasen ("
 
 **Weitere Runden (gleicher Tag):** Direkte Marken-Suche nach "ReconAI"/"CiraSync" fand primär den Eigen-Content der Wettbewerber (Marketing-/Recruiting-Posts) — für organische Produkt-Platzierung ungeeignet, da Kommentare dort wie Trolling auf fremdem Terrain wirken würden. Ergiebiger war eine dritte Runde mit reinen Schmerzpunkt-Begriffen ohne Markennamen: sie fand für GALYNSKI zwei weitere organische, zur Diskussion einladende Posts sowie drei neue Wettbewerber (ContactMesh, Sigsync, Connecting Software — siehe Cluster C2). Für TeamsDashboard blieb auch ein dritter Anlauf (englische Fachbegriffe wie "Teams presence dashboard") ergebnislos — das Thema scheint auf LinkedIn in durchsuchbarer Form nicht präsent zu sein; hier wird keine weitere Suchinvestition empfohlen. Gesamtkosten über alle Runden: rund **$0,16**.
 
+### Update 2026-07-27 — Wöchentlicher Loop, Woche 4 (erste Monats-Cadence-Runde)
+
+**GSC-Gap-Analyse (Wochenvergleich 11.–17.7. vs. 18.–24.7., alle 5 Properties als sc-domain: bestätigt):**
+- **teamsdashboard.com:** Erstmals wieder 3 Klicks in der aktuellen Woche (Vorwoche: 0) — auf „dashboard teams", „microsoft teams dashboard", „teams dashboard", alle Position 7–24. Neuer Treffer: „teams presence tracking", **Position 1**, 1 Impression, 0 Klicks — noch keine eigene Seite dafür, aber die Startseite rankt dafür bereits organisch top. Cannibalization-Check: `app.teamsdashboard.com` erschien in der Vorwoche noch für „t dashboard"/„t/c dashboard"-Suchen (Pos. 8–44), in der aktuellen Woche nicht mehr in den Top-Zeilen — bei diesem winzigen Volumen kein belastbarer Trend, aber im Blick behalten.
+- **ssig-it.com:** Stabil, „ssig-it"/„ssig it"-Brandsuchen dominieren mit Position 1. Jabra-Cluster weiterhin über 15+ Query-Varianten auf Position 8–25 sichtbar — **weiterhin 0 Klicks in beiden Wochen**.
+- **ssig-work.com:** „coworking schwäbische alb" jetzt Position 5,1 (Vorwoche 3,6) — **Positionsverschlechterung statt Verbesserung**, weiterhin 0 Klicks, weiterhin keine eigene `/schwaebische-alb`-Seite.
+- **secretexpiry.com:** **Weiterhin 0 Impressionen** in beiden Wochen — die 4. Woche in Folge ohne jede Sichtbarkeit.
+- **galynski.com:** Nur 1–2 Longtail-Queries mit Positionen 48–91 (z. B. „anruferkennung firmenkontakte" Pos. 88–91) — keine der 6 Use-Case-/Vergleichsseiten trägt bislang zur Sichtbarkeit bei, weil sie nicht live sind (siehe unten).
+
+**Techniker-Fix-Status (curl-Recheck gegen `2026-07-techniker-anweisung-seo-fixes.md`):**
+- 1.1 secretexpiry.com Canonical: **weiterhin unverändert** (`href="https://secretexpiry.com"`, non-www, weiterhin im Widerspruch zum www-Redirect), Sitemap weiterhin non-www.
+- 1.2 teamsdashboard.com `/sitemap.xml`: **weiterhin HTTP 404**.
+- 1.3 Canonical-Tags galynski.com + teamsdashboard.com: **weiterhin keine vorhanden**.
+- 1.4 app./demo.-Subdomains noindex: **weiterhin nicht gesetzt**.
+- 2.1 ssig-it.com: **teilweise neu** — eine Meta-Description ist jetzt vorhanden („SSIG-IT – Ihr IT-Systemhaus für Beratung, Managed Services, Hardware und Workplace as a Service…", andere Formulierung als vorgeschlagen, aber inhaltlich brauchbar). Title jedoch weiterhin unverändert („SSIG-IT | Ihre IT-Spezialisten", keine Suchbegriffe).
+- 2.2 ssig-work.com MultiOffice-Text: **bestätigt weiterhin entfernt** (einzig vollständig abgeschlossener Punkt).
+- 6 GALYNSKI-Seiten (`/loesungen*`, `/vergleich*`): **weiterhin alle HTTP 404**.
+
+**Bewertung:** Nach 4 Wochen ist genau ein Punkt vollständig umgesetzt (2.2) und einer teilweise (2.1, nur Meta-Description). Die beiden Prio-1-Fixes mit dem größten SEO-Schaden (1.1 Canonical-Konflikt, 1.2 Sitemap-404) sind unverändert, und secretexpiry.com hat trotz dokumentierter Ursache seit 4 Wochen exakt 0 Impressionen. **Empfehlung an Philipp König:** Den wöchentlichen GSC-Loop ab jetzt zu pausieren, bis mindestens die Prio-1-Fixes (1.1–1.4) umgesetzt sind — ein weiterer Wochenbericht ohne technische Umsetzung liefert keine neue Information mehr und bindet nur Zeit. Sobald Fixes gemeldet werden, kann der Loop sofort per `fire_trigger` oder einer neuen Erinnerung reaktiviert werden. Bis dahin läuft unten trotzdem die planmäßige Erinnerung für nächste Woche weiter, falls sich das ändert.
+
+**Apify/LinkedIn-Auffrischung (Monats-Cadence, erste Runde unter neuem Loop-Design):** 3 Suchpaare (kurze 2–4-Wort-Begriffe), Kostenobergrenze eingehalten (45 Items angefordert, konkreter $-Betrag wurde vom Actor in dieser Runde nicht zurückgegeben — Größenordnung an früheren Läufen mit vergleichbarem Umfang gemessen: ca. $0,05–$0,15).
+- **TeamsDashboard** („teams wallboard", „office presence display"): **fast ausschließlich irrelevant** (Bauwesen-Wallboard-Hersteller, Stellenanzeigen, Konferenz-Posts) — beide Suchbegriffe für künftige Runden nicht wiederverwenden.
+- **SecretExpiry** („expired client secret", „azure secret expiring"): zweite Suche ergiebig — **Andrey Tereshkin**: „3:14 AM. Production auth was down… A secret in Azure Key Vault had quietly expired…" (klassische Ausfall-Erzählung, Kommentar-Chance); **Felipe Restrepo** (16 Likes): baut öffentlich ein „Entra ID Security Health Check Toolkit" für genau dieses Problem — Kommentar-Chance UND Signal für Marktbedarf. **Neuer möglicher Wettbewerber:** „Aether365 – Microsoft 365 Security" postet über „Workload Identities in Entra: App Secret Hygiene" — noch nicht tief recherchiert, als Beobachtungsposten vormerken.
+- **GALYNSKI** („GAL smartphone sync", „sync contacts iphone"): **Obinna H.**: „Most MSPs are still handling tickets for something that should just work: contact or GAL sync… Manual updates. Broken GAL visibility on mobile. Outdated contact data across devices." — starker, direkt zitierbarer Pain-Point. sync.blue und CiraSync tauchten mit eigenen Werbe-Posts auf (kein neuer Fund, bestätigt nur weiterhin aktive LinkedIn-Präsenz beider). George Pazmino erwähnt CorpSync im Hashtag-Kontext — zu dünn für eine Vertiefung diese Woche, aber als möglicher Anknüpfungspunkt vorgemerkt, falls die dünne CorpSync-Zeile in Learning 3 mal ausgebaut wird.
+
+**Allgemeiner Wachstums-Learning-Sweep:** **Diese Woche ausgefallen** — der Reddit-Connector war in dieser Session unerwartet nicht verbunden (Status „NOT_FOUND" bei `COMPOSIO_MANAGE_CONNECTIONS`/`COMPOSIO_WAIT_FOR_CONNECTIONS`, anders als in den Vorwochen). Da eine Neuverbindung eine Login-Bestätigung erfordert, wurde das nicht automatisch erzwungen. Ein WebSearch-Ausweichversuch lieferte keine belastbaren aktuellen Top-Posts. **Für nächste Woche vormerken:** Falls der Connector weiterhin fehlt, kurz Bescheid geben oder den Verbindungslink freigeben.
+
+**Hinweis zur parallelen Routine:** Die separate wöchentliche Routine „Reddit Konkurrenz- & Alternativen-Thread-Suche (SSIG-IT)" (trig_0132Pq65T3jsET9o7JjcE8Z7, andere Session) läuft unabhängig weiter und wurde hier nicht dupliziert.
+
 ---
 
 ## Learning 1 — SEO/AEO-Playbook „Agensi" (r/micro_saas, aufgenommen 2026-07-05)

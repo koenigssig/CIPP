@@ -2,6 +2,8 @@
 
 **Stand:** 2026-07-05 · **Auftraggeber:** Philipp König · **Kontext:** Alle 5 Domains sind seit heute in der Google Search Console verifiziert, Sitemaps eingereicht. Die folgenden Punkte wurden bei der technischen Prüfung gefunden und sind nach Priorität sortiert. Jeder Punkt enthält einen Verifikations-Befehl, mit dem du deine Änderung selbst prüfen kannst.
 
+**Update 2026-07-27 (Woche-4-Recheck):** Nach 4 Wochen ist nur 2.2 vollständig erledigt, 2.1 teilweise (Meta-Description neu vorhanden, Title weiterhin unverändert). Alle Prio-1-Punkte (1.1–1.4) sowie die 6 GALYNSKI-Seiten sind unverändert offen. Der begleitende wöchentliche Analyse-Loop wird deshalb bis zur Umsetzung der Prio-1-Punkte pausiert vorgeschlagen — Details siehe Hauptreport, Abschnitt „Update 2026-07-27".
+
 ---
 
 ## Prio 1 — Fehler, die Rankings aktiv schaden
