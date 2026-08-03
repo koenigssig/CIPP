@@ -4,6 +4,8 @@
 
 **Update 2026-07-27 (Woche-4-Recheck):** Nach 4 Wochen ist nur 2.2 vollständig erledigt, 2.1 teilweise (Meta-Description neu vorhanden, Title weiterhin unverändert). Alle Prio-1-Punkte (1.1–1.4) sowie die 6 GALYNSKI-Seiten sind unverändert offen. Der begleitende wöchentliche Analyse-Loop wird deshalb bis zur Umsetzung der Prio-1-Punkte pausiert vorgeschlagen — Details siehe Hauptreport, Abschnitt „Update 2026-07-27".
 
+**Update 2026-08-03 (Woche-5-Recheck):** Weiterhin keine Änderung an 1.1–1.4 (secretexpiry-Canonical non-www, teamsdashboard-Sitemap 404, keine Canonical-Tags auf galynski/teamsdashboard, kein noindex auf app./demo.) und alle 6 GALYNSKI-Seiten weiterhin HTTP 404. Pausier-Vorschlag aus Woche 4 bleibt bestehen.
+
 ---
 
 ## Prio 1 — Fehler, die Rankings aktiv schaden
